@@ -15,8 +15,14 @@ class BookController:
         Ajoute un livre via les données saisies dans la vue.
         """
         book_entity: BookEntity = self.view.get_book_input()
-        new_book_id = self.manager.add_book(book_entity)
-        self.view.show_message(f"Livre ajouté avec succès avec l'ID : {new_book_id}")
+
+        book_entity = self.manager.add_book(book_entity)
+
+        if book_entity.id:
+            self.view.display_book(book_entity)
+            self.view.show_message(f"Livre ajouté avec succès avec l'ID : {book_entity.id}")
+        else:
+            self.view.show_message(f"Echec de l'ajout du Livre")
 
     def update_book(self):
         """

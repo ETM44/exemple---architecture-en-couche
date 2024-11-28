@@ -21,7 +21,7 @@ class BookRepository:
             print(f"Erreur lors de la connexion à la base de données : {e}")
             self.connection = None
 
-    def create(self, book_entity):
+    def create(self, book_entity) -> int:
         """
         Insère un livre dans la base de données et retourne l'ID généré.
         :param book_entity: Instance de BookEntity contenant les données.

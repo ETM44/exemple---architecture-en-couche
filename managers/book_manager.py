@@ -1,3 +1,4 @@
+import re 
 from entities.book_entity import BookEntity
 
 class BookManager:
@@ -7,12 +8,26 @@ class BookManager:
         """
         self.repository = repository
 
-    def add_book(self, book_entity: BookEntity):
+    def add_book(self, book_entity: BookEntity) -> BookEntity:
         """
-        Ajoute un livre via le repository et retourne l'ID généré.
-        :return: ID du livre créé ou None.
+        Ajoute un livre via le repository et retourne le livre avec son ID.
+        :return: BookEntity.
         """
-        return self.repository.create(book_entity)
+        date_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+        if (book_entity.published_date and 
+            not date_pattern.match(book_entity.published_date)):
+            
+            return book_entity
+
+        if (not book_entity.title == "" and
+            not book_entity.author == "" and
+            not book_entity.published_date == "" and
+            not book_entity.genre == ""):
+
+            book_entity.id = self.repository.create(book_entity)
+        
+        return book_entity
 
     def get_all_books(self):
         """
