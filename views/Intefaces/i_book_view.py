@@ -1,8 +1,6 @@
 from abc import ABC, abstractmethod
 from entities.book_entity import BookEntity
-from PyQt5.QtWidgets import (
-    QWidget
-)
+from PyQt5.QtWidgets import QWidget
 
 class IBookView(QWidget):
     @abstractmethod
