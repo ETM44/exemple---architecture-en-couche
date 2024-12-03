@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from repositories.base_repository import BaseRepository
 
 class IBookRepository(ABC):
     @abstractmethod

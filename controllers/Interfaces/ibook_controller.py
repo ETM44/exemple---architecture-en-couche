@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from entities.book_entity import BookEntity
 
 class IBookController(ABC):
     @abstractmethod

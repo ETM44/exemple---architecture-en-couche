@@ -1,7 +1,8 @@
+from controllers.Interfaces.ibook_controller import IBookController
 from controllers.base_controller import BaseController
 from entities.book_entity import BookEntity
 
-class SimpleBookController(BaseController):
+class SimpleBookController(IBookController, BaseController):
     def add_book(self):
         """
         Ajoute un livre via les données saisies dans la vue.

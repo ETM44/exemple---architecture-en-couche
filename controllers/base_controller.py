@@ -1,4 +1,7 @@
-class BaseController:
+from abc import ABC
+
+
+class BaseController(ABC):
     def __init__(self, manager, view):
         """
         Initialise le contrôleur avec un gestionnaire et une vue.
