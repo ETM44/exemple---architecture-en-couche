@@ -1,15 +1,7 @@
+from controllers.base_controller import BaseController
 from entities.book_entity import BookEntity
 
-class BookController:
-    def __init__(self, manager, view):
-        """
-        Initialise le contrôleur avec un gestionnaire et une vue.
-        :param manager: Instance de BookManager.
-        :param view: Instance de BookView.
-        """
-        self.manager = manager
-        self.view = view
-
+class SimpleBookController(BaseController):
     def add_book(self):
         """
         Ajoute un livre via les données saisies dans la vue.
@@ -51,7 +43,11 @@ class BookController:
         Affiche tous les livres disponibles.
         """
         books = self.manager.get_all_books()
-        self.view.display_books(books)
+
+        if len(books) == 0:
+            self.view.show_message(f"Livres non trouvé")
+        else:
+            self.view.display_books(books)
 
     def show_book_by_id(self):
         """

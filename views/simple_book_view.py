@@ -4,8 +4,9 @@ from PyQt5.QtWidgets import (
 )
 
 from entities.book_entity import BookEntity
+from views.Intefaces.i_book_view import IBookView
 
-class BookView(QWidget):
+class SimpleBookView(IBookView):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Gestion des Livres")

@@ -1,26 +1,9 @@
-import mysql.connector
-
 from mysql.connector import Error
 from entities.book_entity import BookEntity
+from repositories.Interfaces.ibook_repository import IBookRepository
+from repositories.base_repository import BaseRepository
 
-class BookRepository:
-    def __init__(self, host, database, user, password):
-        try:
-            self.connection = mysql.connector.connect(
-                host=host,
-                port=3306,
-                database=database,
-                user=user,
-                password=password
-            )
-            if self.connection.is_connected():
-                print("Connexion à la base de données réussie")
-            else :
-                print("Connexion à la base de données échouée")
-        except mysql.connector.Error as e:
-            print(f"Erreur lors de la connexion à la base de données : {e}")
-            self.connection = None
-
+class SimpleBookRepository(IBookRepository, BaseRepository):
     def create(self, book_entity) -> int:
         """
         Insère un livre dans la base de données et retourne l'ID généré.
@@ -130,10 +113,3 @@ class BookRepository:
             print(f"Erreur lors de la suppression du livre : {e}")
             return False
 
-    def __del__(self):
-        """
-        Ferme la connexion à la base de données.
-        """
-        if self.connection and self.connection.is_connected():
-            self.connection.close()
-            print("Connexion à la base de données fermée")
