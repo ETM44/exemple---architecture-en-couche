@@ -2,6 +2,7 @@
 
 ## Créer la base de donnée "library" et sa table "book" dans une base de données mySql:
 
+```SQL
 CREATE DATABASE library;
 
 USE library
@@ -15,21 +16,26 @@ id INT AUTO_INCREMENT PRIMARY KEY,
  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+```
 
 ## Créer un utilisateur myuser avec le mot de passe mypassword:
 
+```SQL
 CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
+```
 
 ## Donner les droits à notre utilisateur sur library:
 
+```SQL
 GRANT SELECT, INSERT, UPDATE, DELETE ON library.\* TO 'myuser'@'localhost';
+```
 
 ## Installer les dépendances suivantes sur le projet:
 
     pip install PyQt5
     pip install mysql-connector-python
 
-## Installer PlanUML sur vscode
+## Installer PlantUML sur vscode
 
 Pour voir le diagramme de classe aller sur classDiag.wsd et faire Alt + D
 
