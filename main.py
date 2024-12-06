@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 import sys
 
 from managers.book_manager import BookManager
@@ -8,9 +10,11 @@ from PyQt5.QtWidgets import QApplication
 
 if __name__ == "__main__":
 
+    load_dotenv()
+
     app = QApplication(sys.argv)
 
-    repo = BookRepository(host="localhost", database="library", user="myuser", password="mypassword")
+    repo = BookRepository(host=os.getenv("DB_HOST"), database=os.getenv("DB_DATABASE"), user=os.getenv("DB_USER"), password=os.getenv("DB_PASSWORD"))
     
     manager = BookManager(repo)
 
