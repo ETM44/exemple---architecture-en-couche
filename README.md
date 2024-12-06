@@ -5,7 +5,7 @@
 ```SQL
 CREATE DATABASE library;
 
-USE library
+USE library;
 
 CREATE TABLE book (
 id INT AUTO_INCREMENT PRIMARY KEY,  
