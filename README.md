@@ -41,4 +41,4 @@ Pour voir le diagramme de classe aller sur classDiag.wsd et faire Alt + D
 
 ## Lancer le projet
 
-python main.py
+    python main.py
