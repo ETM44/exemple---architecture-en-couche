@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 import sys
 
 from controllers.interfaces.ibook_controller import IBookController
@@ -16,9 +18,14 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
 
+    load_dotenv()
 
 
-    repo: IBookRepository = RepositoryFactories.get_book_repository("simple")
+    repo: IBookRepository = RepositoryFactories.get_book_repository("simple", 
+                                                                    host=os.getenv("DB_HOST"), 
+                                                                    database=os.getenv("DB_DATABASE"), 
+                                                                    user=os.getenv("DB_USER"), 
+                                                                    password=os.getenv("DB_PASSWORD"))
 
     manager: IBookManager = ManagerFactories.get_book_manager("simple", repo)
 
@@ -31,7 +38,11 @@ if __name__ == "__main__":
 
 
 
-    repo2: IBookRepository = RepositoryFactories.get_book_repository("simple")
+    repo2: IBookRepository = RepositoryFactories.get_book_repository("simple", 
+                                                                        host=os.getenv("DB_HOST"), 
+                                                                        database=os.getenv("DB_DATABASE"), 
+                                                                        user=os.getenv("DB_USER"), 
+                                                                        password=os.getenv("DB_PASSWORD"))
 
     manager2: IBookManager = ManagerFactories.get_book_manager("simple", repo2)
 
