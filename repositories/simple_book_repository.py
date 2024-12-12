@@ -1,6 +1,6 @@
 from mysql.connector import Error
 from entities.book_entity import BookEntity
-from repositories.Interfaces.ibook_repository import IBookRepository
+from repositories.interfaces.ibook_repository import IBookRepository
 from repositories.base_repository import BaseRepository
 
 class SimpleBookRepository(IBookRepository, BaseRepository):

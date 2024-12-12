@@ -1,6 +1,6 @@
 import re 
 from entities.book_entity import BookEntity
-from managers.Interfaces.ibook_manager import IBookManager
+from managers.interfaces.ibook_manager import IBookManager
 from managers.base_manager import BaseManager
 
 class SimpleBookManager(IBookManager, BaseManager):

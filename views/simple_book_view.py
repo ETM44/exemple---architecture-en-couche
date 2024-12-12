@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (
 )
 
 from entities.book_entity import BookEntity
-from views.Intefaces.i_book_view import IBookView
+from views.intefaces.i_book_view import IBookView
 from views.base_view import BaseView
 
 class SimpleBookView(IBookView, BaseView):

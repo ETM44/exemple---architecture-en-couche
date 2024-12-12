@@ -1,4 +1,4 @@
-from controllers.Interfaces.ibook_controller import IBookController
+from controllers.interfaces.ibook_controller import IBookController
 from controllers.base_controller import BaseController
 from entities.book_entity import BookEntity
 

@@ -10,3 +10,6 @@ class BaseController(ABC):
         """
         self.manager = manager
         self.view = view
+
+        # Connecter les signaux
+        view.connect_signals(self)
