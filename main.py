@@ -22,8 +22,6 @@ if __name__ == "__main__":
     
     controller = BookController(manager, view)
 
-    # Connecter les signaux et afficher la fenêtre
-    view.connect_signals(controller)
     view.show()
 
     sys.exit(app.exec_())

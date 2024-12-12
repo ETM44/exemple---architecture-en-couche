@@ -10,6 +10,9 @@ class BookController:
         self.manager = manager
         self.view = view
 
+        # Connecter les signaux et afficher la fenêtre
+        self.view.connect_signals(self)
+
     def add_book(self):
         """
         Ajoute un livre via les données saisies dans la vue.
