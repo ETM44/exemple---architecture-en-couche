@@ -1,4 +1,4 @@
-from managers.simple_book_manager import SimpleBookManager
+from src.managers.simple_book_manager import SimpleBookManager
 
 
 class ManagerFactories:

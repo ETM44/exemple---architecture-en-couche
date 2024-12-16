@@ -1,4 +1,4 @@
-from repositories.simple_book_repository import SimpleBookRepository
+from src.repositories.simple_book_repository import SimpleBookRepository
 
 class RepositoryFactories:
     @staticmethod

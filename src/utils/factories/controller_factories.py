@@ -1,4 +1,4 @@
-from controllers.simple_book_controller import SimpleBookController
+from src.controllers.simple_book_controller import SimpleBookController
 
 
 class ControllerFactories:

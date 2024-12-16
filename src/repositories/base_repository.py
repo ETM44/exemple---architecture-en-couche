@@ -2,7 +2,7 @@ from abc import ABC
 
 import mysql.connector
 
-from utils.singleton import singleton
+from src.utils.singleton import singleton
 
 @singleton
 class BaseRepository(ABC):

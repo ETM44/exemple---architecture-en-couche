@@ -1,4 +1,4 @@
-from views.simple_book_view import SimpleBookView
+from src.views.simple_book_view import SimpleBookView
 
 
 class ViewFactories:

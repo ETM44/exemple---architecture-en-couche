@@ -1,6 +1,7 @@
-from controllers.interfaces.ibook_controller import IBookController
-from controllers.base_controller import BaseController
-from entities.book_entity import BookEntity
+
+from src.controllers.Interfaces.ibook_controller import IBookController
+from src.controllers.base_controller import BaseController
+from src.entities.book_entity import BookEntity
 
 class SimpleBookController(IBookController, BaseController):
     def add_book(self):

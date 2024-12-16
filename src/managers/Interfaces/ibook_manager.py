@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from entities.book_entity import BookEntity
+from src.entities.book_entity import BookEntity
 
 
 class IBookManager(ABC):

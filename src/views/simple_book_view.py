@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
+    QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QTableWidget, QTableWidgetItem, QMessageBox
 )
 
-from entities.book_entity import BookEntity
-from views.intefaces.i_book_view import IBookView
-from views.base_view import BaseView
+from src.entities.book_entity import BookEntity
+from src.views.Intefaces.i_book_view import IBookView
+from src.views.base_view import BaseView
 
 class SimpleBookView(IBookView, BaseView):
     def __init__(self):

@@ -1,7 +1,7 @@
 from mysql.connector import Error
-from entities.book_entity import BookEntity
-from repositories.interfaces.ibook_repository import IBookRepository
-from repositories.base_repository import BaseRepository
+from src.entities.book_entity import BookEntity
+from src.repositories.Interfaces.ibook_repository import IBookRepository
+from src.repositories.base_repository import BaseRepository
 
 class SimpleBookRepository(IBookRepository, BaseRepository):
     def create(self, book_entity) -> int:

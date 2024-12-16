@@ -1,7 +1,7 @@
 import re 
-from entities.book_entity import BookEntity
-from managers.interfaces.ibook_manager import IBookManager
-from managers.base_manager import BaseManager
+from src.entities.book_entity import BookEntity
+from src.managers.Interfaces.ibook_manager import IBookManager
+from src.managers.base_manager import BaseManager
 
 class SimpleBookManager(IBookManager, BaseManager):
     def add_book(self, book_entity: BookEntity) -> BookEntity:

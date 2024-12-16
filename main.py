@@ -2,16 +2,16 @@ from dotenv import load_dotenv
 import os
 import sys
 
-from controllers.interfaces.ibook_controller import IBookController
-from managers.interfaces.ibook_manager import IBookManager
-from repositories.interfaces.ibook_repository import IBookRepository
-from utils.factories.controller_factories import ControllerFactories
-from utils.factories.manager_factories import ManagerFactories
-from utils.factories.repository_factories import RepositoryFactories
-from utils.factories.view_factories import ViewFactories
+from src.controllers.Interfaces.ibook_controller import IBookController
+from src.managers.Interfaces.ibook_manager import IBookManager
+from src.repositories.Interfaces.ibook_repository import IBookRepository
+from src.utils.factories.controller_factories import ControllerFactories
+from src.utils.factories.manager_factories import ManagerFactories
+from src.utils.factories.repository_factories import RepositoryFactories
+from src.utils.factories.view_factories import ViewFactories
 from PyQt5.QtWidgets import QApplication
 
-from views.intefaces.i_book_view import IBookView
+from src.views.Intefaces.i_book_view import IBookView
 
 if __name__ == "__main__":
 
