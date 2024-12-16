@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 import os
 import sys
 
-from managers.book_manager import BookManager
-from repositories.book_repository import BookRepository
-from views.book_view import BookView
-from controllers.book_controller import BookController
+from src.managers.book_manager import BookManager
+from src.repositories.book_repository import BookRepository
+from src.views.book_view import BookView
+from src.controllers.book_controller import BookController
 from PyQt5.QtWidgets import QApplication
 
 if __name__ == "__main__":
