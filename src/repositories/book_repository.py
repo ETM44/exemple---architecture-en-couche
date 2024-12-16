@@ -1,7 +1,7 @@
 import mysql.connector
 
 from mysql.connector import Error
-from entities.book_entity import BookEntity
+from src.entities.book_entity import BookEntity
 
 class BookRepository:
     def __init__(self, host, database, user, password):

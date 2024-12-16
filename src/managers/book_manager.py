@@ -1,5 +1,5 @@
 import re 
-from entities.book_entity import BookEntity
+from src.entities.book_entity import BookEntity
 
 class BookManager:
     def __init__(self, repository):

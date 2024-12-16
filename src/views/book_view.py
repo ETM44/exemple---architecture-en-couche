@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (
     QPushButton, QTableWidget, QTableWidgetItem, QMessageBox
 )
 
-from entities.book_entity import BookEntity
+from src.entities.book_entity import BookEntity
 
 class BookView(QWidget):
     def __init__(self):

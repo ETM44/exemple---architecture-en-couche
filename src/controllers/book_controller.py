@@ -1,4 +1,4 @@
-from entities.book_entity import BookEntity
+from src.entities.book_entity import BookEntity
 
 class BookController:
     def __init__(self, manager, view):
