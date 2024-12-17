@@ -2,9 +2,6 @@ from abc import ABC
 
 import mysql.connector
 
-from src.utils.singleton import singleton
-
-@singleton
 class BaseRepository(ABC):
     def __init__(self, host, database, user, password):
         try:

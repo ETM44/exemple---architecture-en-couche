@@ -2,8 +2,9 @@ from mysql.connector import Error
 from src.entities.book_entity import BookEntity
 from src.repositories.Interfaces.ibook_repository import IBookRepository
 from src.repositories.base_repository import BaseRepository
+from src.utils.singleton import SingletonABCMeta
 
-class SimpleBookRepository(IBookRepository, BaseRepository):
+class SimpleBookRepository(IBookRepository, BaseRepository, metaclass=SingletonABCMeta):
     def create(self, book_entity) -> int:
         """
         Insère un livre dans la base de données et retourne l'ID généré.
@@ -112,4 +113,5 @@ class SimpleBookRepository(IBookRepository, BaseRepository):
         except Error as e:
             print(f"Erreur lors de la suppression du livre : {e}")
             return False
+
 
