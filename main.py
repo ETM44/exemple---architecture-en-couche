@@ -3,9 +3,10 @@ import os
 import sys
 from dotenv import load_dotenv
 from src.controllers.Interfaces.ibook_controller import IBookController
-from src.utils.factories.abstract_factory import AbstractFactory
 from src.utils.factories.simple_factory import SimpleFactory
+from src.utils.factories.abstract_factory import AbstractFactory
 
+from PyQt5.QtWidgets import QApplication
 
 def create_window(factory: AbstractFactory, db_params: dict) -> IBookController:
     repo = factory.create_repository(db_params)
@@ -15,7 +16,7 @@ def create_window(factory: AbstractFactory, db_params: dict) -> IBookController:
     return controller
 
 if __name__ == "__main__":
-    #app = QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     # Charger les variables d'environnement
     load_dotenv()
@@ -33,4 +34,4 @@ if __name__ == "__main__":
     controller1 = create_window(factory, db_params)
     controller2 = create_window(factory, db_params)
 
-    #sys.exit(app.exec_())
+    sys.exit(app.exec_())
