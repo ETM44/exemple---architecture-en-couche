@@ -1,13 +1,12 @@
 from PyQt5.QtWidgets import (
-    QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QTableWidget, QTableWidgetItem, QMessageBox
 )
 
 from src.entities.book_entity import BookEntity
 from src.views.Intefaces.i_book_view import IBookView
-from src.views.base_view import BaseView
 
-class SimpleBookView(IBookView, BaseView):
+class SimpleBookView(IBookView, QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Gestion des Livres")

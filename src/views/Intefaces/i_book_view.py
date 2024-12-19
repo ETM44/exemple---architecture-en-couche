@@ -4,6 +4,10 @@ from PyQt5.QtWidgets import QWidget
 
 class IBookView(QWidget):
     @abstractmethod
+    def display(self):
+        pass
+    
+    @abstractmethod
     def create_input_field(self, label_text):
         pass
 

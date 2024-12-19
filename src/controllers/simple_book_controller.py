@@ -1,9 +1,21 @@
 
 from src.controllers.Interfaces.ibook_controller import IBookController
-from src.controllers.base_controller import BaseController
 from src.entities.book_entity import BookEntity
 
-class SimpleBookController(IBookController, BaseController):
+class SimpleBookController(IBookController):
+    def __init__(self, manager, view):
+        """
+        Initialise le contrôleur avec un gestionnaire et une vue.
+        :param manager: Instance de Manager.
+        :param view: Instance de View.
+        """
+        self.manager = manager
+        self.view = view
+
+        # Connecter les signaux
+        view.connect_signals(self)
+        view.show()
+
     def add_book(self):
         """
         Ajoute un livre via les données saisies dans la vue.

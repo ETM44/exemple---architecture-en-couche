@@ -1,9 +1,14 @@
 import re 
 from src.entities.book_entity import BookEntity
 from src.managers.Interfaces.ibook_manager import IBookManager
-from src.managers.base_manager import BaseManager
 
-class SimpleBookManager(IBookManager, BaseManager):
+class SimpleBookManager(IBookManager):
+    def __init__(self, repository):
+        """
+        Initialise le gestionnaire avec une instance de Repository.
+        """
+        self.repository = repository
+    
     def add_book(self, book_entity: BookEntity) -> BookEntity:
         """
         Ajoute un livre via le repository et retourne le livre avec son ID.
