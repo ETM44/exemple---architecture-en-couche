@@ -1,6 +1,6 @@
 ```mermaid
 ---
-title: Architecture Hexagonale example
+title: Architecture en couche
 ---
 classDiagram
     direction LR
